@@ -5,8 +5,6 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: node({
-    mode: 'standalone'
-  })
+  site: "https://zeronacer.github.io",
+  base: "/astro-wordpress-sync"
 });
