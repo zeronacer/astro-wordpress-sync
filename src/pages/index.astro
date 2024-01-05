@@ -7,19 +7,16 @@ import { homePagePostsQuery } from "../lib/api";
 const data = await homePagePostsQuery();
 const posts = data.posts.nodes;
 
-Astro.response.headers.set('Cache-Control','max-age=600, must-revalidate');
-
+Astro.response.headers.set("Cache-Control", "max-age=600, must-revalidate");
 ---
 
-<MainLayout title='Home Page'>
+<MainLayout title="Home Page">
 	<main>
-		<Hero></Hero>
+		<Hero />
 		<h2>Recent Posts</h2>
 		{
-			posts.map(post => {
-				return (
-					<PostCard post={post}></PostCard>
-				)
+			posts.map((post) => {
+				return <PostCard post={post} />;
 			})
 		}
 	</main>
